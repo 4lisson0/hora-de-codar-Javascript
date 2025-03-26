@@ -1,22 +1,47 @@
 function inicio() {
-  //9. Escreva um programa para ler o ano de nascimento de uma pessoa e escrever uma mensagem que diga se ela poderá ou não votar este ano (não é necessário considerar o mês em que ela nasceu).
+  // 8. Escreva um programa que calcule a média de quatro números informados pelo usuário, mas somente se esses números
+  //forem maiores que 0 e menores que 10. No final, se a média for maior que cinco o usuário receberá uma mensagem
+  //"Você passou no teste". Em qualquer outra situação, ele receberá uma mensagem de "tente novamente"
 
-  alert("Bem-vindo ao será que você pode votar?? \n");
+  var nota1, nota2, nota3, nota4;
+  var media,
+    soma = 0;
 
-  var ano_nascimento, ano_atual;
-  var calculo = 0;
+  nota1 = parseInt(prompt("Digite sua primeira nota: "));
+  nota2 = parseInt(prompt("Digite sua segunda nota: "));
+  nota3 = parseInt(prompt("Digite sua terceira nota: "));
+  nota4 = parseInt(prompt("Digite sua quarta nota: "));
 
-  ano_atual = parseInt(prompt("Qual é o ano atual? "));
-  ano_nascimento = parseInt(prompt("Qual é o ano de seu nascimento? "));
-
-  calculo = ano_atual - ano_nascimento;
-
-  alert("Sua idade atual é: " + calculo);
-
-  if (calculo < 18) {
-    alert("Você ainda não pode votar");
+  if (nota1 >= 0 && nota1 < 11) {
+    soma = soma + nota1;
   } else {
-    alert("Você pode votar");
+    escreva("O primeiro numero digitado é invalido");
+  }
+
+  if (nota2 >= 0 && nota2 < 11) {
+    soma = soma + nota2;
+  } else {
+    escreva("O segundo numero digitado é invalido");
+  }
+
+  if (nota3 >= 0 && nota3 < 11) {
+    soma = soma + nota3;
+  } else {
+    escreva("O terceiro numero digitado é invalido");
+  }
+
+  if (nota4 >= 0 && nota4 < 11) {
+    soma = soma + nota4;
+  } else {
+    escreva("O quarto numero digitado é invalido");
+  }
+
+  media = soma / 4;
+
+  if (media >= 5.0) {
+    escreva("Voce passou no teste!! Parabens");
+  } else {
+    escreva("Tente novamente!");
   }
 }
 inicio();
