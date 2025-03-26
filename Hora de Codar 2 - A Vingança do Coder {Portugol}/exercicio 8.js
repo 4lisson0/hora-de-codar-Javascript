@@ -15,33 +15,33 @@ function inicio() {
   if (nota1 >= 0 && nota1 < 11) {
     soma = soma + nota1;
   } else {
-    escreva("O primeiro numero digitado é invalido");
+    alert("O primeiro numero digitado é invalido");
   }
 
   if (nota2 >= 0 && nota2 < 11) {
     soma = soma + nota2;
   } else {
-    escreva("O segundo numero digitado é invalido");
+    alert("O segundo numero digitado é invalido");
   }
 
   if (nota3 >= 0 && nota3 < 11) {
     soma = soma + nota3;
   } else {
-    escreva("O terceiro numero digitado é invalido");
+    alert("O terceiro numero digitado é invalido");
   }
 
   if (nota4 >= 0 && nota4 < 11) {
     soma = soma + nota4;
   } else {
-    escreva("O quarto numero digitado é invalido");
+    alert("O quarto numero digitado é invalido");
   }
 
   media = soma / 4;
 
   if (media >= 5.0) {
-    escreva("Voce passou no teste!! Parabens");
+    alert("Voce passou no teste!! Parabens");
   } else {
-    escreva("Tente novamente!");
+    alert("Tente novamente!");
   }
 }
 inicio();
