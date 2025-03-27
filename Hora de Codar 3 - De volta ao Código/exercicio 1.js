@@ -6,10 +6,10 @@ function inicio() {
   var contador = 30
 
   while (contador > 0) {
-    alert("Contagem em: " + contador + "\n")
+    document.write("<p>Contagem em: </p>" + contador + "\n")
     contador = contador - 1
     if(contador == 0){
-      alert("Boooommm!!!")
+      document.write("<p>Boooommm!!!</p>")
     }
   }
 }
