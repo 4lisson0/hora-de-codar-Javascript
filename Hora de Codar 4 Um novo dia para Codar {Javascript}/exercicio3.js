@@ -9,25 +9,22 @@ function compras() {
   let frutas = ["maçã", "banana", "laranja", "uva", "abacaxi"];
   let fruta = "";
 
-  while (frutas.length > 0) {
-    document.write("<h1>Lista de frutas disponíveis:</h1>");
-    document.write("<ul>");
-    frutas.forEach((item) => {
-      document.write(`<li>${item}</li>`);
-    });
-    document.write("</ul>");
+  alert("Bem-vindo ao sistema de compras!");
+  alert("Frutas disponíveis: " + frutas);
 
+  while (frutas.length > 0) {
     fruta = prompt("Digite o nome de uma fruta para remover da lista:");
+    alert("Você digitou: " + fruta);
 
     if (frutas.includes(fruta)) {
       frutas.splice(frutas.indexOf(fruta), 1);
       alert("Fruta foi retirada da lista.");
+      alert("Frutas disponíveis: " + frutas);
     } else {
       alert("Fruta indisponível no nosso mercado.");
+      alert("Frutas disponíveis: " + frutas);
     }
-
-    document.body.innerHTML = "";
   }
-
-  document.write("<h1>Lista de compras finalizada.</h1>");
+  alert("Lista de compras finalizada.");
 }
+compras();
