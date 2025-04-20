@@ -107,7 +107,8 @@ function transferencia() {
   );
 
   if (agencia == 0 || agencia >= 9999) {
-    alert("Operação não autorizada \n");
+    alert("Operação não realizada, digite a agencia escolhida de até quatro números. \n");
+    menu();
   } else {
     alert("Agencia selecionada foi: " + agencia + "\n");
     valorTransferencia = parseInt(prompt("Informe o valor para o depósito: "));
