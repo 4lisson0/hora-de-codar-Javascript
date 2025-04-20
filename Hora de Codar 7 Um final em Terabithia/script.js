@@ -1,4 +1,12 @@
-var nome = prompt("Digite seu nome: ");
+let nome;
+
+do {
+  nome = prompt("Digite seu nome: ");
+  if (!nome || nome.trim() === "") {
+    alert("O nome não pode ser vazio. Por favor, insira um nome válido.");
+  }
+} while (!nome || nome.trim() === "");
+
 const lista_hospedes_idade = [];
 const lista_hospedes = [];
 const quartos = Array(20).fill("livre");
@@ -28,7 +36,7 @@ function menu() {
         reserva_quartos();
         break;
       case 2:
-        cadastro_hospedes();
+        sistema_cadastrar_hospedes();
         break;
       case 3:
         abastecer_carros();
@@ -52,12 +60,7 @@ function menu() {
     if (confirma === "sim") {
       alert("Obrigado por usar o Hotel Tatooine!");
       alert("Volte sempre! \n");
-      return;
-    } else if (confirma === "não") {
-      menu();
-    } else {
-      alert("Por favor, responda com 'sim' ou 'não'.");
-      sair();
+      alert("A força esteja com você!");
     }
   }
 
@@ -287,21 +290,59 @@ function menu() {
         menu();
     }
 
-    function cadastro_hospedes() {
-      if (lista_hospedes.length >= 15) {
-        alert("Numero máximo de hóspedes cadastrados.");
-      } else {
-        var nome_hospede = prompt("Por favor, informe o nome da(o) hóspede:");
-
-        lista_hospedes.push(nome_hospede);
-        console.log(lista_hospedes);
-        alert(
-          "Sucesso! Hóspede " +
-            nome_hospede +
-            " foi cadastrada(o) com sucesso!\n"
+    function cadastrar_hospedes() {
+      while (true) {
+        var nome_hospede = prompt(
+          'Por favor, informe o nome da(o) hóspede (ou digite "sair" para encerrar):'
         );
-      }
+        if (nome_hospede.toLowerCase() === "sair") {
+          break; // Sai do loop se o usuário digitar "sair"
+        }
 
+        var idade_hospede = prompt(
+          `Por favor, informe a idade de ${nome_hospede}:`
+        );
+        if (lista_hospedes.length >= 15) {
+          alert("Número máximo de hóspedes cadastrados.");
+          break; // Sai do loop se o limite for atingido
+        } else if (idade_hospede < 6) {
+          lista_hospedes.push(nome_hospede);
+          lista_hospedes_idade.push(idade_hospede);
+          console.log(lista_hospedes);
+          alert(
+            `Idade de ${nome_hospede} é ${idade_hospede}, logo sua entrada é gratuita`
+          );
+          alert(
+            "Sucesso! Hóspede " +
+              nome_hospede +
+              " foi cadastrada(o) com sucesso!\n"
+          );
+        } else if (idade_hospede > 60) {
+          lista_hospedes.push(nome_hospede);
+          lista_hospedes_idade.push(idade_hospede);
+          console.log(lista_hospedes);
+          alert(
+            `Idade de ${nome_hospede} é ${idade_hospede}, logo valor da entrada é meia`
+          );
+          alert(
+            "Sucesso! Hóspede " +
+              nome_hospede +
+              " foi cadastrada(o) com sucesso!\n"
+          );
+        } else {
+          lista_hospedes.push(nome_hospede);
+          lista_hospedes_idade.push(idade_hospede);
+          console.log(lista_hospedes);
+          alert(
+            `Idade de ${nome_hospede} é ${idade_hospede}, valor da entrada é inteira`
+          );
+          alert(
+            "Sucesso! Hóspede " +
+              nome_hospede +
+              " foi cadastrada(o) com sucesso!\n"
+          );
+        }
+      }
       sistema_cadastrar_hospedes();
     }
 
