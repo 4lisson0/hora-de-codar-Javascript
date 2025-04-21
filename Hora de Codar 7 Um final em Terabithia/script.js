@@ -93,7 +93,7 @@ function menu() {
 
     while (true) {
       valorDiaria = parseFloat(prompt("Informe o valor da diária: "));
-      if (isNaN(valorDiaria) || valorDiaria <= 0) {
+      if (isNaN(valorDiaria) || valorDiaria <= 0 || valorDiaria == null || valorDiaria == "") { 
         alert(
           "Valor inválido. Por favor, informe um valor numérico maior que zero."
         );
@@ -104,7 +104,7 @@ function menu() {
 
     while (true) {
       qtdDias = parseInt(prompt("Informe a quantidade de dias: "));
-      if (isNaN(qtdDias) || qtdDias <= 0) {
+      if (isNaN(qtdDias) || qtdDias <= 0 || qtdDias == null || qtdDias == "") {
         alert(
           `Quantidade inválida ${nome}. Por favor, informe um número maior que zero.`
         );
@@ -491,7 +491,7 @@ function menu() {
 
       while (true) {
         nomeEmpresa = prompt("Qual o nome da empresa?");
-        if (!nomeEmpresa || nomeEmpresa.trim() === "") {
+        if (!nomeEmpresa || nomeEmpresa.trim() === "" || nomeEmpresa == null) {
           alert(
             "O nome da empresa não pode ser vazio. Por favor, insira um nome válido."
           );
@@ -502,7 +502,7 @@ function menu() {
 
       while (true) {
         valorPorAparelho = parseFloat(prompt("Qual o valor por aparelho?"));
-        if (isNaN(valorPorAparelho) || valorPorAparelho <= 0) {
+        if (isNaN(valorPorAparelho) || valorPorAparelho <= 0 || valorPorAparelho == null || valorPorAparelho == "") {
           alert(
             "Valor inválido. Por favor, informe um valor numérico maior que zero."
           );
@@ -513,7 +513,7 @@ function menu() {
 
       while (true) {
         qtdAparelhos = parseInt(prompt("Qual a quantidade de aparelhos?"));
-        if (isNaN(qtdAparelhos) || qtdAparelhos <= 0) {
+        if (isNaN(qtdAparelhos) || qtdAparelhos <= 0 || qtdAparelhos == null || qtdAparelhos == "") {
           alert(
             "Quantidade inválida. Por favor, informe um número maior que zero."
           );
@@ -526,7 +526,7 @@ function menu() {
         descontoPercentual = parseFloat(
           prompt("Qual a porcentagem de desconto?")
         );
-        if (isNaN(descontoPercentual) || descontoPercentual < 0) {
+        if (isNaN(descontoPercentual) || descontoPercentual < 0 || descontoPercentual == null || descontoPercentual == "") {
           alert(
             "Porcentagem inválida. Por favor, informe um valor maior ou igual a zero."
           );
@@ -539,7 +539,7 @@ function menu() {
         minAparelhosDesconto = parseInt(
           prompt("Qual o número mínimo de aparelhos para conseguir o desconto?")
         );
-        if (isNaN(minAparelhosDesconto) || minAparelhosDesconto <= 0) {
+        if (isNaN(minAparelhosDesconto) || minAparelhosDesconto <= 0 || minAparelhosDesconto == null || minAparelhosDesconto == "") {
           alert(
             "Quantidade inválida. Por favor, informe um número maior que zero."
           );
@@ -562,12 +562,12 @@ function menu() {
       const continuar = prompt(
         "Deseja informar novos dados? (S/N)"
       ).toLowerCase();
-      if (continuar === "n") {
+      if (continuar === "n" || continuar === "nao") {
         break;
       }
     }
 
-    if (orcamentos.length === 0) {
+    if (orcamentos.length === 0 || orcamentos == null) {
       alert("Nenhum orçamento foi registrado.");
     } else {
       let menorOrcamento = orcamentos[0];
